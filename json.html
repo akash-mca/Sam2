@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Json Example</title>
+
+		<script src="app.js"></script>
+	</head>
+	<body>
+		Date: <span id="date"></span><br />
+		Time: <span id="time"></span><br />
+		<button onclick="load()">load</button>
+
+		<script>
+			const load = () => {
+				const url = "http://date.jsontest.com/";
+				var request = new XMLHttpRequest();
+				request.onreadystatechange = function () {
+					if (this.readyState == 4 && this.status == 200) {
+						var obj = JSON.parse(request.responseText);
+						document.getElementById("date").innerHTML = obj.date;
+						document.getElementById("time").innerHTML = obj.time;
+					}
+				};
+				request.open("GET", url, true);
+				request.send();
+			};
+		</script>
+	</body>
+</html>
