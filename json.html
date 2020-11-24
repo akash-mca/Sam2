@@ -8,8 +8,7 @@
 		<script src="app.js"></script>
 	</head>
 	<body>
-		Date: <span id="date"></span><br />
-		Time: <span id="time"></span><br />
+		<div id="emp"></div>
 		<button onclick="load()">load</button>
 
 		<script>
@@ -19,12 +18,20 @@
 				request.onreadystatechange = function () {
 					if (this.readyState == 4 && this.status == 200) {
 						var obj = JSON.parse(request.responseText);
-						document.getElementById("date").innerHTML = obj.date;
-						document.getElementById("time").innerHTML = obj.time;
+						jsonStuff(obj);
+						document.getElementById("Name").innerHTML = obj.company[0].name;
+						document.getElementById("time").innerHTML = obj.company[0].age;
 					}
 				};
-				request.open("GET", url, true);
+				request.open("GET", "staff.json", true);
 				request.send();
+			};
+			const jsonStuff = (obj) => {
+				for (let i = 0; i < obj.company.length; i++) {
+					const element = obj.company[i];
+					document.getElementById("emp").innerHTML += `Name: ${element.name}<br />
+																Age: ${element.age}<br /><br />`;
+				}
 			};
 		</script>
 	</body>

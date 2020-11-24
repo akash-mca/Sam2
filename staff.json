@@ -1,0 +1,16 @@
+{
+	"company": [
+		{
+			"name": "Prabu",
+			"age": 22
+		},
+		{
+			"name": "Indu",
+			"age": 20
+		},
+		{
+			"name": "Rithul",
+			"age": 2
+		}
+	]
+}
