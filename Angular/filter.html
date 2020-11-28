@@ -13,10 +13,9 @@
 	<body ng-app="app">
 		<main ng-controller="controller">
 			<ul>
-				<li ng-repeat="i in users">{{ i.name + ", " + i.username }}</li>
+				<li ng-repeat="i in users">{{ i.name | uppercase }}</li>
 			</ul>
-			<br />
-			<a href="filter.html"><button>Go to Fliter</button></a>
+			<a href="angular.html"><button>Go back</button></a>
 		</main>
 	</body>
 </html>
