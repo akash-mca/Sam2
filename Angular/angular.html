@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Angular Test</title>
+
+		<script src="angular.min.js"></script>
+		<script src="app.js"></script>
+	</head>
+
+	<body ng-app="app">
+		<main ng-controller="controller">
+			<div>
+				<input type="text" name="name" id="id_name" ng-model="name" /> <br />
+				<input type="text" name="username" id="id_username" ng-model="username" />
+			</div>
+			<br /><br />
+			<div>
+				Name : {{ name }} <br />
+				Username : {{ username }}
+			</div>
+		</main>
+	</body>
+</html>
