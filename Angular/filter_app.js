@@ -1,5 +1,5 @@
 angular.module("app", []).controller("controller", ($scope) => {
-	var users = [
+	$scope.users = [
 		{
 			name: "Cat",
 			username: "cat_user",
@@ -25,5 +25,5 @@ angular.module("app", []).controller("controller", ($scope) => {
 			posts: 15,
 		},
 	];
-	$scope.users = users;
+	$scope.rowlimit = 1;
 });

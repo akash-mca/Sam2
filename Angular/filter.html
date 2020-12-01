@@ -6,26 +6,29 @@
 
 		<title>Angular Test - Filters</title>
 
-		<script src="angular.min.js"></script>
-		<script src="filter_app.js"></script>
+		<link rel="stylesheet" href="style.css" />
 	</head>
 
 	<body ng-app="app">
 		<main ng-controller="controller">
+			Rows to display: <input type="number" id="id_numrow" step="1" min="0" max="4" ng-model="rowlimit" /> <br /><br />
+			Search: <input type="text" id="id_search" placeholder="Search Users" ng-model="search" /> <br /><br />
 			<table>
 				<thead>
 					<tr>
 						<th>Name</th>
 						<th>Username</th>
 						<th>Date</th>
+						<th>Date (better format)</th>
 						<th>Posts</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="i in users">
-						<td>{{ i.name }}</td>
-						<td>{{ i.username }}</td>
+					<tr ng-repeat="i in users | limitTo: rowlimit | filter: search ">
+						<td>{{ i.name | lowercase }}</td>
+						<td>{{ i.username | uppercase }}</td>
 						<td>{{ i.date }}</td>
+						<td>{{ i.date | date:"dd-MMM-yy" }}</td>
 						<td>{{ i.posts }}</td>
 					</tr>
 				</tbody>
@@ -33,5 +36,9 @@
 			<br />
 			<a href="angular.html"><button>Go back</button></a>
 		</main>
+
+		<!-- AngularJS Stuff -->
+		<script src="angular.min.js"></script>
+		<script src="filter_app.js"></script>
 	</body>
 </html>
