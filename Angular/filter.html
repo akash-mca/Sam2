@@ -4,17 +4,33 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<title>Angular Test</title>
+		<title>Angular Test - Filters</title>
 
 		<script src="angular.min.js"></script>
-		<script src="app.js"></script>
+		<script src="filter_app.js"></script>
 	</head>
 
 	<body ng-app="app">
 		<main ng-controller="controller">
-			<ul>
-				<li ng-repeat="i in users">{{ i.name | uppercase }}</li>
-			</ul>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Username</th>
+						<th>Date</th>
+						<th>Posts</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="i in users">
+						<td>{{ i.name }}</td>
+						<td>{{ i.username }}</td>
+						<td>{{ i.date }}</td>
+						<td>{{ i.posts }}</td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
 			<a href="angular.html"><button>Go back</button></a>
 		</main>
 	</body>
