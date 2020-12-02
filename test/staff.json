@@ -1,0 +1,44 @@
+{
+	"company": [
+		{
+			"name": "Prabu",
+			"age": 22
+		},
+		{
+			"name": "Indu",
+			"age": 20
+		},
+		{
+			"name": "Rithul",
+			"age": 2
+		}
+	],
+	"letter": [
+		{
+			"name": "A",
+			"age": 22
+		},
+		{
+			"name": "B",
+			"age": 20
+		},
+		{
+			"name": "C",
+			"age": 2
+		}
+	],
+	"text": [
+		{
+			"name": "no",
+			"age": 22
+		},
+		{
+			"name": "yes",
+			"age": 20
+		},
+		{
+			"name": "maybe",
+			"age": 2
+		}
+	]
+}
