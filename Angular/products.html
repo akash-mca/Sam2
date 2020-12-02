@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Angular Test - Products</title>
+
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body ng-app="app">
+		<main ng-controller="controller">
+			<table>
+				<thead>
+					<tr>
+						<th>Index</th>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Quantity</th>
+						<th>Price</th>
+						<th>Option</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="product in products">
+						<td>{{ $index }}</td>
+						<td>{{ product.id }}</td>
+						<td>{{ product.name }}</td>
+						<td>{{ product.quantity }}</td>
+						<td>{{ product.price | currency:"&#8377;":0 }}</td>
+						<td>
+							<a href="#" ng-click="edit($index)">Edit</a>
+							<a href="#" ng-click="delete($index)">Delete</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<div>
+				<h3>Product Info</h3>
+				<table>
+					<tr>
+						<td>ID</td>
+						<td><input type="text" ng-model="id" /></td>
+					</tr>
+					<tr>
+						<td>Name</td>
+						<td><input type="text" ng-model="name" /></td>
+					</tr>
+					<tr>
+						<td>Quantity</td>
+						<td><input type="text" ng-model="quantity" /></td>
+					</tr>
+					<tr>
+						<td>Price</td>
+						<td><input type="text" ng-model="price" /></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input type="button" value="Add" ng-click="add()" />
+							<input type="button" value="Save" ng-click="save()" />
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br /><br />
+			<a href="angular.html"><button>Go back</button></a>
+		</main>
+
+		<!-- AngularJS Stuff -->
+		<script src="angular.min.js"></script>
+		<script src="products_app.js"></script>
+	</body>
+</html>
